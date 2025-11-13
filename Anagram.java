@@ -41,31 +41,30 @@ public class Anagram {
 			if (idxCh == -1) {
 				return false;
 			}
-			str2 = str2.substring(0, idxCh) + str2.substring(idxCh +1);
+			str2 = str2.substring(0, idxCh) + str2.substring(idxCh + 1);
 		}
 		return true;
 	}
 
 	// Returns a preprocessed version of the given string: all the letter characters
 	// are converted
-	// to lower-case, and all the other characters are deleted, except for spaces,
-	// which are left
-	// as is. For example, the string "What? No way!" becomes "whatnoway"
+	// to lower-case, and all the other characters are deleted.
+	// For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
 		String result = "";
 
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
 
-            if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
-                if (ch >= 'A' && ch <= 'Z') {
-                    ch = (char) (ch - 'A' + 'a');
-                }
-                result += ch;
-            }
-        }
+			if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+				if (ch >= 'A' && ch <= 'Z') {
+					ch = (char) (ch - 'A' + 'a');
+				}
+				result += ch;
+			}
+		}
 
-        return result;
+		return result;
 	}
 
 	// Returns a random anagram of the given string. The random anagram consists of
